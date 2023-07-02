@@ -20,7 +20,7 @@ public class BaseResponse<T> {
 	}
 
 	// success response without data
-	public static BaseResponse ok() {
+	public static BaseResponse<Object> ok() {
 		return new BaseResponse<>(BaseStatus.SUCCESS.getCode(), BaseStatus.SUCCESS.getMessage(), null);
 	}
 
@@ -33,7 +33,7 @@ public class BaseResponse<T> {
 	}
 
 	// error response
-	static BaseResponse error(int code, String message) {
+	static BaseResponse<Object> error(int code, String message) {
 		return new BaseResponse<>(code, message, null);
 	}
 
